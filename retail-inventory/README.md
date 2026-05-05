@@ -136,3 +136,21 @@ Add screenshots of the dashboard, products, orders, restock, and reports pages h
 
 - MSRIT DBMS Semester IV Project
 - Team: Krish (1MS25CS408), Prithviraj (1MS24CS133)
+
+## DBMS Concepts Used
+
+This project is built around core DBMS concepts and demonstrates them in a practical retail workflow:
+
+- Entity modeling for `Product`, `Supplier`, `Customer`, `Order`, `RestockLog`, and `User`
+- Relational-style associations using MongoDB references between collections
+- Primary-key style document identity with MongoDB ObjectIds
+- Foreign-key style references such as product-to-supplier, order-to-customer, and restock-to-product/supplier
+- CRUD operations across all core entities
+- Validation rules for required fields, numeric ranges, enums, and uniqueness constraints
+- Search, filtering, sorting, and pagination for large datasets
+- Aggregation pipelines for sales, inventory, supplier, and customer analytics
+- Derived values and computed summaries such as low-stock checks, totals, and revenue reports
+- Role-based access control for protected data operations
+- Data seeding for realistic sample records and repeatable testing
+
+These topics map closely to the DBMS syllabus by combining schema design, relationships, querying, constraints, and reporting into one working application.
