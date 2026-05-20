@@ -10,7 +10,7 @@ exports.getAllCustomers = async (req, res, next) => {
     const filter = {};
     if (search) {
       const re = { $regex: search, $options: 'i' };
-      filter.$or = [{ name: re }, { phone: re }];
+      filter.$or = [{ name: re }, { phone: re }, { email: re }];
     }
     const customers = await Customer.find(filter).sort({ name: 1 });
     res.json({ success: true, count: customers.length, data: customers });

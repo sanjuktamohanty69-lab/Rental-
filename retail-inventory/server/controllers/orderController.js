@@ -19,7 +19,14 @@ exports.getAllOrders = async (req, res, next) => {
       if (startDate) filter.order_date.$gte = new Date(startDate);
       if (endDate) filter.order_date.$lte = new Date(endDate);
     }
-    if (customerId) filter.customer = mongoose.Types.ObjectId(customerId);
+    if (customerId) {
+      if (!mongoose.Types.ObjectId.isValid(customerId)) {
+        const err = new Error('Invalid customerId');
+        err.statusCode = 400;
+        return next(err);
+      }
+      filter.customer = mongoose.Types.ObjectId(customerId);
+    }
     if (status) filter.status = status;
 
     const total = await Order.countDocuments(filter);
