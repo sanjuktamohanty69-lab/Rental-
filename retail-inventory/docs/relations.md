@@ -126,7 +126,7 @@ One-line explanation: This schema view makes primary and foreign key relationshi
 
 ```mermaid
 flowchart TD
-  A[Order Document] --> B[items[] array]
+  A[Order Document] --> B[items array]
   B --> C[productId]
   B --> D[quantity]
   B --> E[unit_price]
